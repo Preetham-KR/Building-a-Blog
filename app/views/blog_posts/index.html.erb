@@ -4,9 +4,9 @@
  <div>
     <h2><%= link_to blog_post.title, blog_post %></h2>
      <% if blog_post.draft?%>
-            <div class="p-2 rounded bg-gray-300 text-gray-900">Draft</div>
+            <div class="p-2 rounded bg-red-500 text-red-900 h-20 w-20">Draft</div>
          <% elsif blog_post.scheduled?%>
-            <div class="p-2 rounded bg-gray-300 text-blue-900">Scheduled</div>
+            <div class="p-2 rounded bg-blue-400 text-blue-900 h-20 w-20">Scheduled</div>
         <%end%>
     <%= blog_post.body%>
  </div>
