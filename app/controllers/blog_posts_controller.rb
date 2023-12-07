@@ -39,7 +39,7 @@ class BlogPostsController < ApplicationController
     private
 
     def blog_post_params
-        params.required(:blog_post).permit(:title, :body, :published_at)
+        params.required(:blog_post).permit(:title, :content, :published_at)
     end
 
     #This is code optimization 
