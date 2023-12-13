@@ -1,0 +1,10 @@
+<div class="filter-buttons">
+    <h2>Filter Posts:</h2>
+    <%= link_to "Last 1 Day", blog_posts_path(filter: 'last_1_day'), class: "filter-button" %>
+    <%= link_to "Last Month", blog_posts_path(filter: 'last_month'), class: "filter-button" %>
+    <%= link_to "Last Year", blog_posts_path(filter: 'last_year'), class: "filter-button" %>
+    <%= link_to "All Posts", blog_posts_path(filter: 'all'), class: "filter-button" %>
+  </div>
+<div class="full-width-image-container">
+    <%= image_tag('welcome', style: 'width: 100%; height: 94.7%; position: absolute; top: 0; left: 0;', alt: 'Description of the image') %>
+</div>

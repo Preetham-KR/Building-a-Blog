@@ -1,0 +1,41 @@
+
+
+<nav  class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height: 60px;">
+  <div class="container-fluid">
+    <div class="navbar-brand">
+      Welcome, <%= current_user.email if user_signed_in? %>
+    </div>
+
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div>
+      <ul class="navbar-nav ms-auto">
+        <% if user_signed_in? %>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="filterDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative; top: -8px;">
+              Filter Posts
+            </a>
+            <div class="dropdown-menu" aria-labelledby="filterDropdown">
+              <%= link_to "Last 1 Day", blog_posts_path(filter: 'last_1_day'), class: "dropdown-item" %>
+              <%= link_to "Last Month", blog_posts_path(filter: 'last_month'), class: "dropdown-item" %>
+              <%= link_to "Last Year", blog_posts_path(filter: 'last_year'), class: "dropdown-item" %>
+              <%= link_to "All Posts", blog_posts_path(filter: 'all'), class: "dropdown-item" %>
+            </div>
+          </li>
+        <% end %>
+
+        
+        <%= link_to "Home", authenticated_root_path, class: "nav-link" if user_signed_in? %>
+         <%= link_to "All Posts", blog_posts_path, class: "nav-link" if user_signed_in?%>
+        <%= link_to "Draft Posts", draft_blog_posts_path, class: "nav-link" if user_signed_in? %>
+        <%= link_to "Scheduled Posts", scheduled_blog_posts_path, class: "nav-link" if user_signed_in? %>
+        <%= link_to "Published Posts", published_blog_posts_path, class: "nav-link" if user_signed_in? %>
+         <%= link_to "New blog Posts", new_blog_post_path, class: "nav-link" if user_signed_in? %>
+         <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" if user_signed_in? %>
+      </ul>
+    </div>
+  </div>
+</nav>

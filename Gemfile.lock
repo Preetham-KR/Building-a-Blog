@@ -284,6 +284,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actiontext (= 7.1.2)
   bootsnap
   bootstrap (~> 5.3)
   capybara

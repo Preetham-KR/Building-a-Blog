@@ -78,4 +78,7 @@ gem "pagy", "~> 6.2"
 
 gem 'bootstrap', '~> 5.3'
 
+gem 'actiontext', '7.1.2'
+
+
 
