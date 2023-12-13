@@ -3,3 +3,9 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "trix"
 import "@rails/actiontext"
+import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+  
